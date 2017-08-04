@@ -12,8 +12,8 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sshagent(['octojenkins2']) {
-                    sh 'git status'
                     sh 'git fetch'
+                    sh 'git checkout master'
                     sh 'git show-ref master'
                     sh 'git status'
                 }
