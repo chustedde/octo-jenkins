@@ -12,7 +12,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sshagent(['octojenkins2']) {
-                    sh 'git checkout origin/master'
                     sh 'git pull origin master'
                 }
             }
@@ -21,7 +20,7 @@ pipeline {
             steps {
                 echo 'Pushing to GitHub...'
                 sshagent(['octojenkins2']) {
-                    sh 'git push github origin/master'
+                    sh 'git push github master'
                 }
             }
         }
