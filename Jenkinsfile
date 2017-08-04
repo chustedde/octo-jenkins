@@ -11,15 +11,21 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing...'
-                echo '(No tests yet)'
+                sshagent(['octojenkins2']) {
+                    sh 'git status'
+                    sh 'git fetch'
+                    sh 'git show-ref master'
+                    sh 'git status'
+                }
             }
         }
         stage('Deploy') {
             steps {
-                echo 'Pushing to GitHub...'
-                sshagent(['octojenkins2']) {
-                    sh 'git push -u github master'
-                }
+                echo 'Just getting info... Done!'
+                //echo 'Pushing to GitHub...'
+                //sshagent(['octojenkins2']) {
+                //    sh 'git push -u github master'
+                //}
             }
         }
     }
