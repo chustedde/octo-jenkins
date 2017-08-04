@@ -13,7 +13,7 @@ pipeline {
                 echo 'Testing...'
                 sshagent(['octojenkins2']) {
                     sh 'git fetch'
-                    sh 'git checkout master'
+                    sh 'git checkout origin/master'
                     sh 'git pull'
                 }
             }
