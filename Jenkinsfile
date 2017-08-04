@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo 'Pushing to GitHub...'
                 sshagent(['octojenkins2']) {
-                    sh 'git push github master'
+                    sh 'git push github origin/master'
                 }
             }
         }
