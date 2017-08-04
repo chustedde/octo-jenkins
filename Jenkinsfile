@@ -12,7 +12,6 @@ pipeline {
             steps {
                 echo 'Testing...'
                 sshagent(['octojenkins2']) {
-                    sh 'git fetch'
                     sh 'git checkout origin/master'
                     sh 'git pull origin master'
                 }
