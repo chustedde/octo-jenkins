@@ -14,7 +14,7 @@ pipeline {
                 sshagent(['octojenkins2']) {
                     sh 'git fetch'
                     sh 'git checkout origin/master'
-                    sh 'git pull'
+                    sh 'git pull origin master'
                 }
             }
         }
