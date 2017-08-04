@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Adding GitHub remote...'
-                sh 'if git remote show | grep "github"; then echo 'Already added'; else git remote add github git@github.com:chustedde/octo-jenkins.git; fi'
+                sh 'if git remote show | grep "github"; then echo "Already added"; else git remote add github git@github.com:chustedde/octo-jenkins.git; fi'
             }
         }
         stage('Test') {
