@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Adding GitHub remote...'
-                sh 'git remote add github git@github.com:chustedde/octo-jenkins.git'
+                // sh 'git remote add github git@github.com:chustedde/octo-jenkins.git'
             }
         }
         stage('Test') {
