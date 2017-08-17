@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Test') {
             steps {
-                echo 'Testing...'
-                sshagent(['octojenkins2']) {
+                echo 'Pulling from Pantheon...'
+                sshagent(['pantheon']) {
                     sh 'git pull origin master'
                 }
             }
